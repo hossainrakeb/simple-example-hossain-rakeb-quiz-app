@@ -9,15 +9,11 @@ let score = 0;
 
 function loadQuestion() {
     const currentQuestion = questions[currentIndex];
-    // This line changes "Question Text" to the actual question
     document.getElementById("question").innerText = currentQuestion.q;
     
-    // This loop fills the A, B, C, D buttons with text
     for (let i = 0; i < 4; i++) {
         const btn = document.getElementsByClassName("option-btn")[i];
         document.getElementById(`text${i}`).innerText = currentQuestion.options[i];
-        
-        // Reset colors from previous round
         btn.classList.remove("correct", "wrong");
         btn.disabled = false;
     }
@@ -68,5 +64,4 @@ function resetQuiz() {
     loadQuestion();
 }
 
-// This line makes the quiz start as soon as the page loads
 loadQuestion();
